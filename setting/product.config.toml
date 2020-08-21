@@ -1,0 +1,49 @@
+[app]
+project = "ncloud"
+domain = "zhiliao.zzinno.com"
+sentryUrl = ""
+env="product"
+[app.jwt]
+key = "JWT"
+expire = 43200
+
+[app.mysql.default]
+dsn = ""
+net = "tcp"
+addr = "127.0.0.1:3306"
+user = "root"
+pass = ""
+nativepass = true
+dbname = "golang-demo"
+
+[app.redis]
+sentinel = false
+host = "127.0.0.1:6379"
+pass = "123456"
+port = "6379"
+master = "mymaster"
+
+#app1的配置
+[app1]
+module = "app1"
+showsql = false
+sqlloglevel = "info"
+
+[app1.http]
+addr = "127.0.0.1:9740"
+glaceful = 5
+
+[app1.logging]
+logLevel = "info"
+logname = "app.log"
+enablefile = true
+enablestdout = true
+logtype = "json"
+
+[app1.redis.auth]
+db = 4
+keyprefix = "zhiliao_app1_auth"
+
+[app1.redis.cache]
+db = 3
+keyprefix = "zhiliao_app1_cache"
